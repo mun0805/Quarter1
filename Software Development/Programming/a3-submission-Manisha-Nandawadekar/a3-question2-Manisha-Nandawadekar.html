@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<!—
+===============================================
+Student Name: Manisha Nandawadekar
+Solution for Assignment 3 Question-2
+===============================================
+-->
+<!--English language is used for the html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" >
+    <title>Function and Conditional Statement</title>
+</head>
+<!-- Content body of the page -->
+<body>
+    <h1 class="header" style="text-align: center;">Function and Conditional Statement</h1>
+
+    <!-- Navigation Area: Top navigation bar with page links -->
+    <div>
+        <!-- Input buttons -->
+        <button class="button button-red" onclick="printMessage('red')"> Red </button>
+        <button class="button button-blue" onclick="printMessage('blue')"> Blue </button>
+        <button class="button button-green" onclick="printMessage('green')"> Green </button>
+    </div>
+    <!-- demo text-->
+    <p id="demo">Here is my color demonstration text, please click the button.</p>
+
+<script>
+    /**
+     * Function to message with the selected color
+     * @param string selectedColor Selected color
+     */
+    function printMessage(selectedColor) {
+        // Empty sting constants for message and result
+	    var msg = '';
+	    var result = '';
+
+        // If the color is red, add message with red font color
+	    if (selectedColor == 'red') {
+	        msg = "You clicked the red word!";
+	        result = msg.fontcolor('red');
+	    }
+        // If the color is blue, add message with blue font color
+	    else if (selectedColor == 'blue') {
+	        msg = "You clicked the blue word!";
+	        result = msg.fontcolor('blue');
+	    }
+        // If the color is green, add message with green font color
+	    else if (selectedColor == 'green') {
+	        msg = "You clicked the green word!";
+	        result = msg.fontcolor('green');
+	    }
+        // print the colored text
+	    document.getElementById("demo").innerHTML = result;
+
+    }
+    </script>
+</body>
+</html>

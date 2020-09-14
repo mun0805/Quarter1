@@ -1,0 +1,36 @@
+.round-img {
+  width: 150px;
+  height: 130px;
+  border-radius: 15%;
+}
+
+td {
+vertical-align: top;
+background-color: #E3FCF9;
+text-align : left;
+}
+
+li {
+ display: inline;
+ text-align:center;
+}
+h1{
+ text-align: center;
+ color: #cc0066;
+ }
+
+ h2{
+ text-align: center;
+ color:#cc0066;
+
+ }
+
+h3
+{
+text-align : center ;
+ color:#cc0066;
+}
+
+body{
+
+}

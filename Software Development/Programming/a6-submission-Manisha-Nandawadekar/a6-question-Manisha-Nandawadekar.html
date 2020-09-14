@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<!—
+===============================================
+Student Name: Manisha Nandawadekar
+Solution for Assignment 6
+===============================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel ="stylesheet " type="text/css" href="styles.css">
+    <title>The Javascript Pizza Parlour</title>
+    <script type=" text/javascript" >
+        // write a function to validate text, radio buttons, and checkboxes to check information is not missing
+        function doSubmit()
+        {
+           if (validateText() && validateRadio() && validateCheck())
+            {
+                var confirmation ="";
+                confirmation += "Your order has been submitted. <br /> <br />";
+                confirmation += "Name:" + document.PizzaForm.fname.value + "<br />";
+                confirmation += "Address:" + document.PizzaForm.address.value + " <br />";
+                confirmation += "City:" + document.PizzaForm.city.value + "<br />";
+                confirmation += "State:" + document.PizzaForm.state.value +"<br />";
+                confirmation += "Zip:" + document.PizzaForm.zip.value +"<br />";
+                confirmation += "Phone:" + document.PizzaForm.phone.value  +"<br />";
+                confirmation += "Email:" + document.PizzaForm.email.value  +"<br />";
+
+                var size = printRadio();
+                confirmation += size;
+                var toppings = printCheck();
+                confirmation += toppings;
+                document.write(confirmation);
+            }
+            return;
+        }
+
+        // validate text inserted into text boxes in pizza form and give warning message if anything wrong.
+
+        function validateText()
+        {
+            var transcribed = true;
+            var notification = "";
+
+            var customer = document.PizzaForm.fname.value;
+            var address = document.PizzaForm.address.value
+            var city = document.PizzaForm.city.value;
+            var state = document.PizzaForm.state.value;
+            var zip = document.PizzaForm.zip.value;
+            var phone = document.PizzaForm.phone.value;
+            var email = document.PizzaForm.email.value;
+
+            if (customer.length== 0)
+            {
+                transcribed = false;
+                notification += " Please enter your name.\n";
+
+            }
+            if (address.length== 0)
+            {
+                transcribed = false;
+                notification += " Please enter your address.\n";
+            }
+
+            if (city.length== 0)
+            {
+                transcribed = false;
+                notification += " Please enter your city.\n";
+            }
+
+            if (state.length == 0)
+            {
+                transcribed = false;
+                notification += " Please enter your state.\n";
+            }
+
+            if (zip.length == 0)
+            {
+                transcribed = false;
+                notification += " Please enter your zip.\n";
+            }
+
+            if (phone.length == 0)
+            {
+                transcribed = false;
+                notification += " Please enter your phone number.\n";
+            } else
+            {
+                if (!isValidPhone(phone))
+                {
+                    transcribed = false;
+                    notification += " Please enter your valid phone number.\n";
+                }
+            }
+
+            if (email.length == 0)
+            {
+                transcribed = false;
+                notification += " Please enter your email.\n";
+            } else {
+                if (!isValidEmail(email))
+                {
+                    transcribed = false;
+                    notification += " Please enter your valid email.\n";
+                }
+            }
+
+            if (!transcribed)
+            {
+                alert(notification);
+            }
+            return transcribed;
+        }
+
+        // write function to validate radio button and give warning message if size is not selected
+        function validateRadio()
+        {
+            var highlighted = false;
+            if (document.PizzaForm. sizes[0].checked)
+            {
+                highlighted = true;
+            }
+            if (document.PizzaForm. sizes[1].checked)
+            {
+                highlighted = true;
+            }
+            if (document.PizzaForm. sizes[2].checked)
+            {
+                highlighted = true;
+            }
+            if (document.PizzaForm. sizes[3].checked)
+            {
+                highlighted = true;
+            }
+            if(!highlighted)
+            {
+                alert(" Please select a size.");
+            }
+            return highlighted;
+
+        }
+
+      // write a function to validate checkboxes and give alert if boxes are not selected.
+      function validateCheck()
+      {
+         var selected = false;
+         if(document.PizzaForm.toppings[0].checked)
+            {
+                selected = true;
+            }
+          if(document.PizzaForm.toppings[1].checked)
+            {
+                selected = true;
+            }
+          if(document.PizzaForm.toppings[2].checked)
+            {
+                selected = true;
+            }
+          if(document.PizzaForm.toppings[3].checked)
+            {
+                selected = true;
+            }
+          if(document.PizzaForm.toppings[4].checked)
+            {
+                selected = true;
+            }
+          if(document.PizzaForm.toppings[5].checked)
+            {
+                selected = true;
+            }
+          if(document.PizzaForm.toppings[6].checked)
+            {
+                selected = true;
+            }
+          if(document.PizzaForm.toppings[7].checked)
+            {
+                selected = true;
+            }
+          if (!selected)
+            {
+                alert("Please select the toppings.");
+            }
+          return selected;
+       }
+
+       // write function for pizza size
+       function printRadio()
+       {
+        var size;
+        if(document.PizzaForm.sizes[0].checked)
+            {
+                size= "Size: Small <br />";
+            }
+        if(document.PizzaForm.sizes[1].checked)
+            {
+                size= "Size: Medium <br />";
+            }
+        if(document.PizzaForm.sizes[2].checked)
+            {
+                size= "Size: Large <br />";
+            }
+        if(document.PizzaForm.sizes[3].checked)
+            {
+                size= "Size: Jumbo <br />";
+            }
+            return size;
+
+       }
+
+        // write function for Pizza topping check
+        function printCheck()
+        {
+            var toppings = "Toppings: ";
+            var choice1 = false;
+
+            if(document.PizzaForm.toppings[0].checked)
+            {
+                toppings += "Pepperoni";
+                choice1 = true;
+            }
+            if(document.PizzaForm.toppings[1].checked)
+            {
+                if (choice1)
+                {
+                    toppings += ", Canadian Bacon";
+                }
+                else
+                {
+                    toppings += "Canadian Bacon";
+                    choice1 = true;
+                }
+            }
+            if(document.PizzaForm.toppings[2].checked)
+            {
+                if (choice1)
+                {
+                    toppings += ", Sausage";
+                }
+                else
+                {
+                    toppings += "Sausage";
+                    choice1 = true;
+                }
+            }
+            if(document.PizzaForm.toppings[3].checked)
+            {
+                if (choice1)
+                {
+                    toppings += ", Mushrooms";
+                }
+                else
+                {
+                    toppings += ", Mushrooms";
+                    choice1 = true;
+                }
+            }
+            if(document.PizzaForm.toppings[4].checked)
+            {
+                if (choice1)
+                {
+                    toppings += ", Beans";
+                }
+                else
+                {
+                    toppings += "Beans";
+                    choice1 = true;
+                }
+            }
+            if(document.PizzaForm.toppings[5].checked)
+            {
+                if (choice1)
+                {
+                    toppings += ", Burnt Orange Peels";
+                }
+                else
+                {
+                    toppings += "Burnt Orange Peels";
+                    choice1 = true;
+                }
+            }
+            if(document.PizzaForm.toppings[6].checked)
+            {
+                if (choice1)
+                {
+                    toppings += ", Blacked Canned Tuna";
+                }
+                else
+                {
+                    toppings += "Blacked Canned Tuna";
+                    choice1 = true;
+                }
+            }
+            if(document.PizzaForm.toppings[7].checked)
+            {
+                if (choice1)
+                {
+                    toppings += ", Extra Cheese";
+                }
+                else
+                {
+                    toppings += "Extra Cheese";
+                    choice1 = true;
+                }
+            }
+            return toppings;
+
+        }
+
+        // Function to validate phone number
+        function isValidPhone(phone)
+        {
+             var pattern = new RegExp("^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$");
+             var digits = phone.replace(/\D/g, "") + "";
+             if (digits.length == 0)
+             {
+                return false;
+             }
+             return pattern.test(digits);
+        }
+
+        // Function to validate email
+        function isValidEmail(email)
+        {
+            var pattern = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+            return pattern.test(email);
+        }
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="fleft">
+        <h1 class="h1first" >The Javascript Pizza Parlour</h1>
+
+        <!- Adding labels and text-boxes for entering customers information -->
+
+        <h2 class="h2first" >Step 1 : Enter your name, address, and phone number:</h2>
+        <form name = "PizzaForm" onsubmit="doSubmit()">
+            <table width="100%">
+                <tr>
+                    <td><label for="fname">Name:</label></td>
+                    <td><input type="text" id="fname" name="fname" class="inputfirst" placeholder="Your Name"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Adress:</label></td>
+                    <td><input type="text" id="address" name="address" class="inputfirst" placeholder="Your Address"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="city">City:</label></td>
+                    <td><input type="text" id="city" name="city" class="inputfirst" placeholder="Your City"></td>
+                    <td><label for="state">State:</label></td>
+                    <td><input type="text" id="state" name="state" class="inputfirst" placeholder="Your State"></td>
+                    <td><label for="zip">Zip:</label></td>
+                    <td><input type="text" id="zip" name="zip" class="inputfirst" placeholder="Your zip"></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone:</label></td>
+                    <td><input type="text" id="phone" name="phone" class="inputfirst" placeholder="Your Phone"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> <label for="email">Email:</label></td>
+                    <td><input type="text" id="email" name="email" class="inputfirst" placeholder="Your Email"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <!- Create radio button for size selection -->
+            <h2 class="h2first">Step 2 : Select the size of Pizza you want:</h2>
+
+            <input type="radio" id="small" name="sizes">
+            <label for="small">Small</label><br>
+            <input type="radio" id="medium" name="sizes">
+            <label for="medium">Medium</label><br>
+            <input type="radio" id="large" name="sizes">
+            <label for="large">Large</label><br>
+            <input type="radio" id="jumbo" name="sizes">
+            <label for="jumbo">Jumbo</label><br>
+
+            <!- Pizza toppings section using checkboxes for multiple toppings selection-->
+            <h2 class="h2first">Step 3 : Select Pizza topping you want:</h2>
+            <input type="checkbox" id="t1" name="toppings">
+            <label for="t1"> Pepperoni</label>
+            <input type="checkbox" id="t2" name="toppings">
+            <label for="t2"> Canadian Bacon</label>
+            <input type="checkbox" id="t3" name="toppings">
+            <label for="t3"> Sausage</label>
+            <input type="checkbox" id="t4" name="toppings">
+            <label for="t4"> Mushrooms</label><br>
+            <input type="checkbox" id="t5" name="toppings">
+            <label for="t5"> Beans</label>
+            <input type="checkbox" id="t6" name="toppings">
+            <label for="t6"> Burnt Orange Peels</label>
+            <input type="checkbox" id="t7" name="toppings">
+            <label for="t7"> Blacked Canned Tuna</label>
+            <input type="checkbox" id="t8" name="toppings">
+            <label for="t8"> Extra Cheese</label><br> <br>
+
+            
+            <!--Add to buttons to clear form and submit order from customer&ndash;&gt;-->
+            <div class="btn-group">
+                <button type="submit" name="submit" id="submit" value = "Sumbit">Submit</button>
+                <button type ="reset" name="reset" id="reset" value="Clear">Clear</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="fright">
+    </div>
+</div>
+</body>
+</html>

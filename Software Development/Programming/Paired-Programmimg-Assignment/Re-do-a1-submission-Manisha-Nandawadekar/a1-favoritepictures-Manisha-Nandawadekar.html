@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+===============================================
+Student Name: Manisha Nandawadekar
+Solution for Assignment 1
+===============================================
+-->
+
+<!-- English language is used for the html -->
+<html lang="en">
+    <!-- Head with stylesheet link and UTF-6 characters are used -->
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../style.css">
+        <title>Introduction: Manisha Nandawadekar</title>
+    </head>
+
+    <!-- Content body of the page -->
+    <body onload="startup()">
+        <!-- Heading Area -->
+        <div class="header">
+            <h1>Manisha Nandawadekar - Student</h1>
+        </div>
+
+        <!-- Navigation Area: Top navigation bar with page links -->
+        <div class="topnav">
+            <a href="a1-home-Manisha-Nandawadekar.html">Home</a>
+            <a href="a1-background-Manisha-Nandawadekar.html">Background</a>
+            <a href="a1-courses-Manisha-Nandawadekar.html">Courses</a>
+            <a href="a1-favoritewebsites-Manisha-Nandawadekar.html">Favorite Websites</a>
+            <a class="active" href="#">Favorite Pictures</a>
+            <a href="a1-referencesused-Manisha-Nandawadekar.html">References Used</a>
+        </div>
+
+        <div style="text-align:center" >
+            <h2> Slide Show </h2>
+            <img name ="slideBanner" src="fav_1.jpeg" height="500px" width="500px">
+            <hr/>
+            <a href="javascript:doBack()"><< Prev</a> <a href="javascript:doNext()">Next >></a>
+        </div>
+        <!-- Content Area -->
+        <!-- Table for images -->
+        <script>
+        var imgArray = new Array(6);
+        var slideIndex = 0;
+
+        function doBack()
+        {
+            slideIndex -- ;
+            if (slideIndex < 0)
+            slideIndex = 5;
+
+            document.slideBanner.src = imgArray [ slideIndex ].src;
+            return;
+        }
+
+        // Add doBack function to check next images in slide show banner
+
+        function doNext()
+        {
+            slideIndex ++ ;
+            if (slideIndex > 5)
+            slideIndex = 0;
+
+            document.slideBanner.src = imgArray [ slideIndex ].src;
+
+
+        return;
+        }
+
+
+        function startup()
+        {
+         //Assign the images to array element 0,1,2 3,4 and 5
+
+        imgArray[0] = new Image;
+        imgArray[0].src = "fav_1.jpeg";
+
+        imgArray[1] = new Image;
+        imgArray[1].src = "fav_2.jpg";
+
+        imgArray[2] = new Image;
+        imgArray[2].src = "fav_3.jpg";
+
+        imgArray[3] = new Image;
+        imgArray[3].src = "fav_4.jpg";
+
+        imgArray[4] = new Image;
+        imgArray[4].src = "fav_5.jpg";
+
+        imgArray[5] = new Image;
+        imgArray[5].src = "fav_6.png";
+
+        return;
+        }
+    </script>
+    </body>
+</html>

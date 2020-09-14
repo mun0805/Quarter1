@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head with stylesheet link and UTF-6 characters are used -->
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Three Musketeers</title>
+</head>
+
+<!-- Content body of the page -->
+<body>
+<!-- Heading Area -->
+<div class="header">
+    <h1>Three Musketeers</h1>
+</div>
+
+<div style="height:40px;"></div>
+
+<!-- Table with each persons website link, time clock and weather -->
+<table style="width: 100%;">
+    <!-- Row to with pictured link for everyone personal page -->
+    <tr>
+        <td style="padding-left:120px;">
+            <a href="a1-submission-Matt-Leonard/a1-Home Page-Matt-Leonard.html">
+                <img class="round-img" src="Matt.jpg" alt="Matt Leonard">
+            </a>
+        </td>
+        <td style="padding-left:100px;">
+            <a href="a1-submission-Manisha-Nandawadekar/a1-home-Manisha-Nandawadekar.html">
+                <img class="round-img" src="Manisha_Profile.jpg" alt="Manisha Nandawadekar">
+            </a>
+        </td>
+        <td style="padding-left:120px;">
+            <a href="a1-submission-Blediana-Noka/a1-home-blediana-Noka.html">
+                <img class="round-img" src="Blediana.jpg" alt="Blediana Noka">
+            </a>
+        </td>
+    </tr>
+
+    <!-- Row for names below pictures -->
+    <tr>
+        <td style="padding-left: 180px;">
+            Matt Leonard
+        </td>
+        <td style="padding-left: 140px;">
+            Manisha Nandawadekar
+        </td>
+        <td style="padding-left: 180px;">
+            Blediana Noka
+        </td>
+    </tr>
+
+    <!-- Row with time clock, timezone and weather-->
+    <tr>
+        <td>
+            <!-- Add the time clock for EST -->
+            <div style="text-align:center;"> <h4><a style="text-decoration:none;">
+                <span style="color:gray;">Current
+			local time in</span><br />Philadelphia, United States</a></h4> <iframe
+                    src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?
+			language=en&size=small&timezone=America%2FNew_York" width="100%" height="90" frameborder="0"
+                    seamless></iframe> </div>
+
+            <!-- Add weather for Philadelphia -->
+            <a class="weatherwidget-io" href="https://forecast7.com/en/39d95n75d17/philadelphia/?unit=us" data-label_1="PHILADELPHIA" data-label_2="WEATHER" data-days="3" data-theme="blue-mountains" >PHILADELPHIA WEATHER</a>
+            <script>
+                // Added ready made widget javascript from https://weatherwidget.io/js/widget.min.js
+                !function(d,s,id)
+                {
+                    var js,fjs=d.getElementsByTagName(s)[0];
+                    if(!d.getElementById(id))
+                    {
+                        js=d.createElement(s);js.id=id;
+                    js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);
+                    }
+                }
+                (document,'script','weatherwidget-io-js');
+            </script>
+        </td>
+        <td>
+            <!-- Add the time clock for EST -->
+            <div style="text-align:center;"> <h4><a style="text-decoration:none;">
+                <span style="color:gray;">Current
+			local time in</span><br />Boston, United States</a></h4> <iframe
+                    src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?
+			language=en&size=small&timezone=America%2FNew_York" width="100%" height="90" frameborder="0"
+                    seamless></iframe> </div>
+
+            <!-- Add weather for Boston -->
+            <a class="weatherwidget-io" href="https://forecast7.com/en/42d36n71d06/boston/?unit=us" data-label_1="BOSTON" data-label_2="WEATHER" data-days="3" data-theme="blue-mountains" >BOSTON WEATHER</a>
+            <script>
+                !function(d,s,id)
+                {
+                    // Added ready made widget javascript from https://weatherwidget.io/js/widget.min.js
+                    var js,fjs=d.getElementsByTagName(s)[0];
+                    if(!d.getElementById(id))
+                    {
+                        js=d.createElement(s);
+                        js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+                        fjs.parentNode.insertBefore(js,fjs);
+                    }
+                }
+                    (document,'script','weatherwidget-io-js');
+            </script>
+        </td>
+        <td>
+            <!-- Add the time clock for Europe -->
+            <div style="text-align:center;"> <h4><a style="text-decoration:none;">
+                <span style="color:gray;">Current
+			local time in</span><br />Tirana, Albania</a></h4> <iframe
+                    src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?
+			language=en&size=small&timezone=Europe%2FTirane" width="100%" height="90" frameborder="0"
+                    seamless></iframe> </div>
+
+            <!-- Add weather for Europe -->
+            <a class="weatherwidget-io" href="https://forecast7.com/en/41d3319d82/tirana/?unit=us" data-label_1="TIRANA" data-label_2="WEATHER" data-days="3" data-theme="blue-mountains" >TIRANA WEATHER</a>
+            <script>
+             !function(d,s,id)
+              {
+                // Added ready made widget javascript from https://weatherwidget.io/js/widget.min.js
+                var js,fjs=d.getElementsByTagName(s)[0];
+                if(!d.getElementById(id))
+                {
+                    js=d.createElement(s);
+                    js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+                    fjs.parentNode.insertBefore(js,fjs);
+                }
+              }
+                    (document,'script','weatherwidget-io-js');
+            </script>
+        </td>
+    </tr>
+
+</table>
+
+<!-- Scrolling  for text -->
+<marquee behavior="scroll" direction="left" scrollamount="15"><h2>Please click on the picture to visit our personal website!</h2></marquee>
+</body>
+</html>

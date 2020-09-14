@@ -1,0 +1,83 @@
+
+.h1first{
+color:#2d8659;
+font-size:30px;
+
+}
+.h2first{
+color:#cc0099;
+font-size:20px;
+margin: 10px;
+}
+
+input[type=button] {
+  width: 100%;
+  font-size :20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inputfirst, select {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.wrap {
+width: 100%;
+overflow:auo;
+}
+
+.fleft {
+    float:left;
+    width: 60%;
+    height: 400px;
+}
+
+.fright {
+float: right;
+    height: 700px;
+    width: 40%;
+}
+
+.btn-group button {
+
+  border: 1px solid green; /* Green border */
+  color: green; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  width: 340px;
+  font-size:20px;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+
+
+.centerDiv1 {
+    display: flex;
+    justify-content: center;
+}

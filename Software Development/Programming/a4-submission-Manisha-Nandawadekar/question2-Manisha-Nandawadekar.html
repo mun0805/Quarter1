@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!—
+===============================================
+Student Name: Manisha Nandawadekar
+Solution for Question 2 of Assignment 4
+===============================================
+-->
+<!-- English language is used for the html -->
+<html lang="en">
+<!-- Head with stylesheet link and UTF-6 characters are used -->
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Statement</title>
+    <link rel="stylesheet" href="styles.css">
+    <h1>Loop Statement</h1>
+</head>
+<body>
+<script>
+    function isEven(n)
+    {
+    return n % 2 == 0;
+    }
+    // Variable declaration
+    var firstNumber = 23;
+    var lastNumber = 214;
+
+    // For loop to find out even and odd numbers between 23 to 214
+    for(var x = firstNumber; x <= lastNumber; x++)
+    {
+      if (isEven(x))
+       document.write("The number " + x + " is even " + "<br>");
+      else
+       document.write("The number " + x + " is odd " + "<br>");
+    }
+</script>
+
+</body>
+</html>

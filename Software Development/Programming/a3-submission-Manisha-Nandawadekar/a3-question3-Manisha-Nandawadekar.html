@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!—
+===============================================
+Student Name: Manisha Nandawadekar
+Solution for Assignment 3 Question-3
+===============================================
+-->
+<!--English language is used for the html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" >
+    <title>Temperature Conversion</title>
+
+</head>
+<!-- Content body of the page -->
+<body>
+    <h1 class="header" Text align="center" >Temperature Conversion</h1>
+    <h2>Please input values for temperature conversion, when you prompted</h2>
+    <button onclick="myFunction()" >Press here for temperature conversion</button>
+<script>
+function myFunction(){
+    // Accept temperature
+    var temperatureNumber = Number(prompt("Enter the value for temperature"));
+    // Accept source scale
+    var sourceScale = prompt ("Enter the source scale");
+    // Accept target scale
+    var targetScale = prompt ("Enter the target scale")
+
+    // Constant for final result
+    var resultTemperature = null;
+
+    if ((sourceScale == 'F' || sourceScale == 'Fahrenheit') && (targetScale == 'C' || targetScale == 'Celsius')) {
+        // If source is Fahrenheit and target is Celcius
+        resultTemperature = (temperatureNumber - 32) * 5/9;
+    } else if((sourceScale == 'F' || sourceScale == 'Fahrenheit') && (targetScale == 'K' || targetScale == 'Kelvin')) {
+        // If source is Fahrenheit and target is Kelvin
+        resultTemperature = (temperatureNumber + 459.67) * 5/9;
+    } else if((sourceScale == 'C' || sourceScale == 'Celsius') && (targetScale == 'F' || targetScale == 'Fahrenheit')) {
+        // If source is Celsius and target is Fahrenheit
+        resultTemperature = (temperatureNumber * 9/5) + 32;
+    } else if((sourceScale == 'C' || sourceScale == 'Celsius') && (targetScale == 'K' || targetScale == 'Kelvin')) {
+        // If source is Celsius and target is Kelvin
+        resultTemperature = temperatureNumber + 273.15;
+    } else if((sourceScale == 'K' || sourceScale == 'Kelvin') && (targetScale == 'F' || targetScale == 'Fahrenheit')) {
+        // If source is Kelvin and target is Fahrenheit
+        resultTemperature = (temperatureNumber * 9/5) - 459.67;
+    } else if((sourceScale == 'K' || sourceScale == 'Kelvin') && (targetScale == 'C' || targetScale == 'Celsius')) {
+        // If source is Kelvin and target is Celsius
+        resultTemperature = temperatureNumber - 273.15;
+    } else {
+        // If source and target is same or does not match to any scale
+        alert('Don’t recognize the temperature scales.');
+    }
+
+    // If resulting temperature is changed means we got the conversion
+    if (resultTemperature != null) {
+       alert(temperatureNumber + sourceScale + ' is ' + resultTemperature + targetScale  + ' in temperature conversion.');
+    }}
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<!--
+===============================================
+Student Name: Blediana Noka
+Solution for Assignment 1
+===============================================
+-->
+
+<html> 
+<head> 
+	<title>Favourite Sunset Pictures</title>
+	<style> 
+    /* nav tag modifies border, colors, and change the padding */   
+        nav { 
+            border:2px; 
+            background-color:#0a436e; 
+            color:powderblue; 
+            padding:20px; 
+        }
+
+    /* hypelink removes underline and modifies color and text size */ 
+        a { 
+            text-decoration:underline; 
+            color:yellow; 
+            font-size:30px; 
+        } 
+    /* gfg class adds text size, color and align */
+        .gfg { 
+            font-size:50px; 
+            color:#2B3094; 
+            font-weight:bold; 
+            text-align:center; 
+        } 
+    /* nav_tag class adds text-alignment and margin */
+        .nav_tag { 
+            text-align:center; 
+            margin:32px; 
+        } 
+    /* four possible states of a hyperlink */
+
+        /* unvisited link */
+            a:link {
+             color: purple;
+        }
+
+        /* visited link */
+            a:visited {
+             color: salmon;
+        }
+
+        /* mouse over link */
+            a:hover {
+            color: yellowgreen;
+        }
+
+        /* selected link */
+            a:active {
+            color: sandybrown;
+        }
+
+        /* change in background color */
+        body {
+            background-color:#cce6ff;
+        }    
+        /* text size in content area */ 
+        .content-style {
+            font-size: 28px;
+            text-align: left;
+        }
+        /* img class adds width and height */
+        img{
+            width:400px;
+            height:400px;
+        }
+
+        /*Padding in Table */
+        table, th, td{
+        padding: 20px;
+        border:1px;    
+        }
+	</style> 
+</head> 
+<body onload="startup()">
+	<div class = "gfg">HomePage  - Blediana Noka</div> 
+    <!-- Navigation Bar -->
+	<nav> 
+
+        <a href = "a1-home-blediana-noka.html">Home</a> | 
+        <a href = "a1-background-blediana-noka.html">Background</a> |
+        <a href = "a1-hobbies-blediana-noka.html">Hobbies</a> |
+        <a href = "a1-courses-blediana-noka.html">Courses</a> |
+        <a href = "a1-websites-blediana-noka.html">Websites</a> |
+        <a href = "a1-favpic-blediana-noka.html">Favourite Pictures</a> |
+        <a href = "a1-whatisHTML-blediana-noka.html">HTML</a> |
+	</nav> 
+	<div class = "content-style">
+		<p>Some of my favourite sunset pictures</p>
+
+        <div style="text-align:center" >
+            <h2> Slide Show </h2>
+            <img name ="slideBanner" src="image1.jpeg" height="140px" width="200px">
+            <hr/>
+            <a href="javascript:doBack()"><< Prev</a> <a href="javascript:doNext()">Next >></a>
+        </div>
+	</div>
+	<!--Arranging my favourite pictures inside Tables-->
+    <script>
+    var imgArray = new Array(4);
+        var slideIndex = 0;
+
+        function doBack()
+        {
+            slideIndex -- ;
+            if (slideIndex < 0)
+            slideIndex = 3;
+
+            document.slideBanner.src = imgArray [ slideIndex ].src;
+        return;
+        }
+
+        // Add doBack function to check next images in slide show banner
+
+        function doNext()
+        {
+            slideIndex ++ ;
+            if (slideIndex > 3)
+            slideIndex = 0;
+
+            document.slideBanner.src = imgArray [ slideIndex ].src;
+
+        return;
+        }
+
+
+        function startup()
+        {
+         //Assign the images to array element 0,1,2,and 3
+
+        imgArray[0] = new Image;
+        imgArray[0].src = "image1.jpeg";
+
+        imgArray[1] = new Image;
+        imgArray[1].src = "image2.jpg";
+
+        imgArray[2] = new Image;
+        imgArray[2].src = "image3.jpeg";
+
+        imgArray[3] = new Image;
+        imgArray[3].src = "image4.jpg";
+
+
+        return;
+        }
+
+
+
+
+    </script>
+
+
+</body> 
+</html>

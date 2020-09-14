@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!—
+===============================================
+Student Name: Manisha Nandawadekar
+Solution for Question 2 of Assignment 5
+===============================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel ="stylesheet " type="text/css" href="styles.css">
+    <title>First and Last Number Loop </title>
+
+<script type ="text/javascript">
+
+//write a function to submit first and last number entries
+    function doSubmit()
+    {
+        if (validateText()) {
+
+            //create variables for first and last numbers
+            var firstNumber = Number (document.getElementById("firstNumber").value);
+            var lastNumber = Number (document.getElementById("lastNumber").value);
+            var i;
+            var j = 1;
+
+            document.write("There are total " + (lastNumber - firstNumber + 1) + " numbers. <br>");
+
+            //Write a loop statement to decide given number is even or odd
+            for(i=firstNumber; i<=lastNumber; i++)
+            {
+                if ((i % 2) == 0)
+                    document.write("The "+ getSuffix(j++)+ " number "+ i +" is even. <br>");
+                else
+                    document.write("The "+ getSuffix(j++)+ " number "+ i +" is odd. <br>");
+            }
+
+            return;
+        }
+    }
+
+    // Write function to apply suffix for numbers
+    function getSuffix(i)
+     {
+        var j = i % 10;
+        var k = i % 100;
+        if(j == 1 && k != 11)
+        {
+            return i + "st";
+        }
+        if(j == 2 && k != 12)
+        {
+            return i + "nd";
+        }
+        if(j == 3 && k != 13)
+        {
+            return i + "rd";
+        }
+         return i + "th";
+     }
+// validate text entered
+  function validateText()
+  {
+  var transcribed = true;
+  var notification = " ";
+  var firstNumber = Number (document.getElementById("firstNumber").value);
+  var lastNumber = Number (document.getElementById("lastNumber").value);
+
+  var firstNumberString =  document.getElementById("firstNumber").value;
+  var lastNumberString = document. getElementById("lastNumber").value;
+
+    if (firstNumberString.length == 0)
+        {
+        transcribed = false;
+        notification += "please enter the first number.\n";
+        }
+        if (lastNumberString.length == 0)
+        {
+        transcribed = false;
+        notification += "please enter the last number.\n";
+        }
+        if (firstNumber > lastNumber)
+        {
+        transcribed = false;
+        notification += "First number must be less than last number.\n";
+        }
+    if(!transcribed)
+    {
+    alert(notification);
+    }
+    return transcribed;
+
+  }
+ //Write function to clear entries.
+    function doClear()
+    {
+    }
+
+
+</script>
+</head>
+<body>
+<h1 class="h1second" >First and Last Number Loop</h1>
+<h2 class="h2second" >Step1: Enter the First and Last Number</h2>
+<!- Create form for input numbers-->
+<form name="numberForm">
+    <div class="centerDiv">
+        <label>First Number:</label>
+        <input type ="text", id="firstNumber" name="FirstNumber" class="inputsecond"><br>
+        <label>Last Number:</label>
+        <input type ="text", id="lastNumber" name="LastNumber" class="inputsecond"><br>
+    </div>
+    <br>
+    <!- write a function to clear and submit entries-->
+    <div class="btn-group centerDiv1">
+        <button type="submit" name="submit" id="submit" value = "Sumbit" onclick="doSubmit()">Submit</button>
+        <button type ="reset" name="reset" id="clear" value="Clear" onclick="doClear()">Clear</button>
+    </div>
+</form>
+</body>
+</html>

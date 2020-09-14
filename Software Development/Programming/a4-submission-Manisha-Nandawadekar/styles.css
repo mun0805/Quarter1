@@ -1,0 +1,28 @@
+
+/* Change in background color and add border and padding to the page */
+body
+{
+  background-color: #e6f7ff;
+  text-align: center;
+  border:1px;
+  padding:10px;
+
+}
+/*  Change the color, font, font size and set center alignment to the head */
+h1
+{
+  color: blue;
+  font-family: verdana;
+  font-size: 20px;
+  text-align: center;
+
+}
+/* Add the styles for navigation bar */
+div
+{
+    border:1px;
+    background-color:#66ccff;
+    color:white;
+    height:190px;
+
+}

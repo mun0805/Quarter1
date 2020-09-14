@@ -1,0 +1,12 @@
+/* Add styles for header */
+.header {
+    color: red;
+    background: #1abc9c;
+    text-align: center;
+}
+/* Add styles for body */
+body {
+    background-color: #e9fcf8;
+    text-align: center;
+    font-size: 35px;
+}

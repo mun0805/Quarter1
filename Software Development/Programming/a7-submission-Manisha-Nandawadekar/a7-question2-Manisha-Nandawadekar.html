@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!—
+===============================================
+Student Name: Manisha Nandawadekar
+Solution for Assignment 7 Question-1
+===============================================
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel ="stylesheet " type="text/css" href="styles.css">
+    <title>Find Median</title>
+
+</head>
+
+<body>
+<!- Give heading for the document.-->
+<h1 class="h1second">Find Median</h1>
+<div class="centerDiv">
+<script type="text/javascript">
+    //variable declaration
+    var list_1 = [3, 8, 9, 1, 5, 7];
+    var list_2 = [10, -2, 0, 5, 3, 1, 7];
+    var med = median(list_1);
+    //print median of given array
+    document.write("Median of [", list_1, "] is: ",med, "<br/>");
+    med = median(list_2);
+    document.write("Median of [", list_2, "] is: ",med, "<br/>");
+
+    // median function to calculate median of array.
+    function median (array)
+    {
+        array.sort(function (a,b) { return a-b; });
+        var half = Math.floor(array.length/2);
+        if (array.length % 2)
+             return array[half];
+        else
+             return (array [half-1] + array[half])/ 2.0;
+    }
+</script>
+</div>
+</body>
+</html>
